@@ -26,6 +26,9 @@ export default class Intram extends Component {
         <Button style={styles.btn} onPress={this._handlePress} title="register">
           Register
         </Button>
+        <Button style={styles.btn} onPress={this._handlePress} title="register">
+          Login
+        </Button>
         <Button style={styles.btn} onPress={this._handlePress} title="information">
           Information
         </Button>
@@ -48,9 +51,10 @@ const styles = StyleSheet.create({
   btn: {
     backgroundColor: '#90002E',
     color: '#e7e7e7',
-    padding: 20,
+    padding: 15,
     margin: 20,
-    width: 200
+    width: 300,
+    fontSize: 25
   },
   container: {
     flex: 1,
