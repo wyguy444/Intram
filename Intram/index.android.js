@@ -6,17 +6,23 @@
 
 import Button from 'react-native-button'
 import React, { Component } from 'react';
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
+  Image,
+  View
 } from 'react-native';
 
 export default class Intram extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+                  style={{width: 50, height: 50}}
+                  source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                />
         <Text style={styles.welcome}>
           Welcome Wyatt!
         </Text>
@@ -26,6 +32,7 @@ export default class Intram extends Component {
         <Button style={styles.btn} onPress={this._handlePress} title="information">
           Information
         </Button>
+
       </View>
     );
   }
