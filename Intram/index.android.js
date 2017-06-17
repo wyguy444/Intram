@@ -4,12 +4,13 @@
  * @flow
  */
 
+import Button from 'react-native-button'
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 export default class Intram extends Component {
@@ -17,28 +18,38 @@ export default class Intram extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome David!
+          Welcome Wyatt!
         </Text>
-        <Text style={styles.instructions}>
-          To get ended, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <Button style={styles.btn} onPress={this._handlePress} title="register">
+          Register
+        </Button>
+        <Button style={styles.btn} onPress={this._handlePress} title="information">
+          Information
+        </Button>
       </View>
     );
   }
+
+  _handlePress(event) {
+      console.log('Pressed!');
+   }
 }
 
 const styles = StyleSheet.create({
+  btn: {
+    backgroundColor: '#90002E',
+    color: '#e7e7e7',
+    padding: 20,
+    margin: 20
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#e7e7e7',
   },
   welcome: {
+    color: '#90002e',
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
