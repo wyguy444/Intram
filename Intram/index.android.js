@@ -20,12 +20,9 @@ export default class Intram extends Component {
     return (
       <View style={styles.container}>
         <Image
-                  style={{width: 50, height: 50}}
-                  source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-                />
-        <Text style={styles.welcome}>
-          Welcome Wyatt!
-        </Text>
+           style={styles.logo}
+           source={require('./img/logo.png')}
+        />
         <Button style={styles.btn} onPress={this._handlePress} title="register">
           Register
         </Button>
@@ -43,11 +40,17 @@ export default class Intram extends Component {
 }
 
 const styles = StyleSheet.create({
+  logo: {
+    width: 250,
+    height: 250,
+    margin: 20
+  },
   btn: {
     backgroundColor: '#90002E',
     color: '#e7e7e7',
     padding: 20,
-    margin: 20
+    margin: 20,
+    width: 200
   },
   container: {
     flex: 1,
