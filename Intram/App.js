@@ -15,16 +15,17 @@ import {
   StyleSheet,
   Text,
   Image,
-  View
+  View,
+  TextInput
 } from 'react-native';
 
 
 
 
 export default class WelcomeScreen extends Component {
-//  static navigationOptions = {
-//      title: 'Welcome',
-//  };
+  static navigationOptions = {
+      title: 'Welcome',
+  };
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -61,13 +62,30 @@ export default class WelcomeScreen extends Component {
 
 
 class RegisterScreen extends Component {
-//    static navigationOptions = {
-//        title: 'Register',
-//    };
+    static navigationOptions = {
+        title: 'Register',
+    };
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
           <View>
-            
+              <Text style={styles.instructions}>First Name</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
+              <Text style={styles.instructions}>First Name</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
+              <Text style={styles.instructions}>First Name</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
           </View>
         );
     }
@@ -79,6 +97,13 @@ const Intram = StackNavigator({
 });
 
 const styles = StyleSheet.create({
+  textInput: {
+    height: 40,
+    width: 400,
+    borderColor: '#90002e',
+    borderWidth: 1,
+    margin: 10
+  },
   logo: {
     width: 250,
     height: 250,
@@ -102,12 +127,13 @@ const styles = StyleSheet.create({
     color: '#90002e',
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 3,
+    fontSize: 15
   },
 });
 
