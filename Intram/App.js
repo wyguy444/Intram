@@ -34,29 +34,19 @@ export default class WelcomeScreen extends Component {
            style={styles.logo}
            source={require('./img/logo.png')}
         />
-        <Button style={styles.btn} onPress={() => navigate('Register')/*this._registerPress*/} title="register">
+        <Button style={styles.btn} onPress={() => navigate('Register')} title="register">
           Register
         </Button>
-        <Button style={styles.btn} onPress={this._loginPress} title="login">
+        <Button style={styles.btn} onPress={() => navigate('Login')} title="login">
           Login
         </Button>
-        <Button style={styles.btn} onPress={this._infoPress} title="information">
+        <Button style={styles.btn} onPress={() => navigate('Info')} title="information">
           Information
         </Button>
 
       </View>
     );
   }
-//
-//  _registerPress(event) {
-//      console.log('Pressed!');
-//   }
-//  _loginPress(event) {
-//
-//  }
-//  _infoPress(event) {
-//
-//  }
 }
 
 
@@ -70,22 +60,65 @@ class RegisterScreen extends Component {
     }
     render() {
         return (
-          <View>
+          <View style={styles.container}>
               <Text style={styles.instructions}>First Name</Text>
               <TextInput
                   alignSelf={'center'}
                   style={styles.textInput}
               />
-              <Text style={styles.instructions}>First Name</Text>
+              <Text style={styles.instructions}>Last Name</Text>
               <TextInput
                   alignSelf={'center'}
                   style={styles.textInput}
               />
-              <Text style={styles.instructions}>First Name</Text>
+              <Text style={styles.instructions}>Email</Text>
               <TextInput
                   alignSelf={'center'}
                   style={styles.textInput}
               />
+
+          </View>
+        );
+    }
+}
+
+class LoginScreen extends Component {
+    static navigationOptions = {
+        title: 'Login',
+    };
+    render() {
+        const { navigate } = this.props.navigation;
+        return (
+            <View style={styles.container}>
+                <Button style={styles.loginbtn} onPress={() => navigate('Home')} title="lgn">
+                    Login
+                </Button>
+            </View>
+        );
+    }
+}
+
+class InfoScreen extends Component {
+//    static navigationOptions = {
+//        title: 'Register',
+//    };
+    render() {
+        return (
+          <View style={styles.container}>
+
+          </View>
+        );
+    }
+}
+
+class HomeScreen extends Component {
+//    static navigationOptions = {
+//        title: 'Register',
+//    };
+    render() {
+        return (
+          <View style={styles.container}>
+
           </View>
         );
     }
@@ -94,6 +127,9 @@ class RegisterScreen extends Component {
 const Intram = StackNavigator({
   Welcome: { screen: WelcomeScreen },
   Register: { screen: RegisterScreen },
+  Login: { screen: LoginScreen },
+  Info: { screen: InfoScreen },
+  Home: { screen: HomeScreen },
 });
 
 const styles = StyleSheet.create({
@@ -108,6 +144,14 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     margin: 20
+  },
+  loginbtn: {
+    backgroundColor: '#90002E',
+    color: '#e7e7e7',
+    padding: 15,
+    margin: 20,
+    width: 300,
+    fontSize: 25
   },
   btn: {
     backgroundColor: '#90002E',
