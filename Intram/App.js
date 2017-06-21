@@ -59,6 +59,7 @@ class RegisterScreen extends Component {
         super(props);
     }
     render() {
+        const { navigate } = this.props.navigation;
         return (
           <View style={styles.container}>
               <Text style={styles.instructions}>First Name</Text>
@@ -76,7 +77,24 @@ class RegisterScreen extends Component {
                   alignSelf={'center'}
                   style={styles.textInput}
               />
-
+              <Text style={styles.instructions}>Insurance Company</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
+              <Text style={styles.instructions}>Policy Number</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
+              <Text style={styles.instructions}>Group Number</Text>
+              <TextInput
+                  alignSelf={'center'}
+                  style={styles.textInput}
+              />
+              <Button style={styles.btn} onPress={() => navigate('Home')} title="register">
+                  Register
+              </Button>
           </View>
         );
     }
