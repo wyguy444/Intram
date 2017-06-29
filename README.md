@@ -9,3 +9,7 @@ Sealand:
 complete page navigation structure
 do backend research
 
+Installations:
+npm install react-native-communications
+
+

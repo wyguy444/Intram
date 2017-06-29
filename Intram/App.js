@@ -4,6 +4,7 @@
  * @flow
  */
 
+import Communications from 'react-native-communications'
 import Button from 'react-native-button'
 import React, { Component } from 'react';
 import {
@@ -136,11 +137,46 @@ class HomeScreen extends Component {
     render() {
         return (
           <View style={styles.container}>
+            <Button style={styles.btn} onPress={() => navigate('Chat')} title="talk">
+              Talk to an expert
+            </Button>
+            <Button style={styles.btn} onPress={() => navigate('Map')} title="map">
+              Find hospital
+            </Button>
+            <Button style={styles.btn} onPress={() => Communications.phonecall(911,true)} title="information">
+              Call 911
+            </Button>
+          </View>
+        );
+    }
+}
+
+class MapScreen extends Component {
+//    static navigationOptions = {
+//        title: 'Register',
+//    };
+    render() {
+        return (
+          <View style={styles.container}>
 
           </View>
         );
     }
 }
+
+class ChatScreen extends Component {
+//    static navigationOptions = {
+//        title: 'Register',
+//    };
+    render() {
+        return (
+          <View style={styles.container}>
+
+          </View>
+        );
+    }
+}
+
 
 const Intram = StackNavigator({
   Welcome: { screen: WelcomeScreen },
@@ -148,6 +184,8 @@ const Intram = StackNavigator({
   Login: { screen: LoginScreen },
   Info: { screen: InfoScreen },
   Home: { screen: HomeScreen },
+  Map: { screen: MapScreen},
+  Chat: { screen: ChatScreen}
 });
 
 const styles = StyleSheet.create({
